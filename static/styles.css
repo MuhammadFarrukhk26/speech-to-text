@@ -1,0 +1,320 @@
+:root {
+  color-scheme: light;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  color: #1d2c26;
+  background: #f5f7f4;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0, #e5efe7 0, transparent 38rem),
+    #f5f7f4;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.shell {
+  width: min(100% - 32px, 680px);
+  margin: 0 auto;
+  padding: 56px 0 32px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 18px;
+  border-radius: 18px;
+  color: #fff;
+  background: #257353;
+  font: 600 28px "Noto Nastaliq Urdu", "Noto Naskh Arabic", serif;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #52846b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: clamp(27px, 5vw, 36px);
+  letter-spacing: -.045em;
+}
+
+.intro {
+  max-width: 440px;
+  margin: 0 auto;
+  color: #697770;
+  line-height: 1.65;
+}
+
+.card {
+  padding: 26px;
+  margin-bottom: 16px;
+  border: 1px solid #e6ebe7;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 34px #1b39240a;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 17px;
+  letter-spacing: -.02em;
+}
+
+.record-panel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+}
+
+.record-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 178px;
+  min-height: 48px;
+  padding: 0 17px;
+  border: 1px solid #d7e7dc;
+  border-radius: 12px;
+  color: #226d4c;
+  background: #f0f7f2;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.record-button:hover {
+  background: #e8f3eb;
+}
+
+.record-button.is-recording {
+  border-color: #f1d4d0;
+  color: #a13f36;
+  background: #fff4f2;
+}
+
+.record-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #31835b;
+}
+
+.is-recording .record-dot {
+  background: #d24a3e;
+  animation: pulse 1.2s infinite;
+}
+
+.muted,
+.upload-control small {
+  margin: 0;
+  color: #7b8881;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 18px;
+  color: #96a09a;
+  font-size: 11px;
+}
+
+.divider::before,
+.divider::after {
+  height: 1px;
+  flex: 1;
+  background: #edf0ed;
+  content: "";
+}
+
+.upload-control {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 68px;
+  padding: 12px 15px;
+  border: 1px dashed #cbd8ce;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.upload-control:hover {
+  border-color: #78a88a;
+  background: #fbfdfb;
+}
+
+.upload-control strong,
+.upload-control small {
+  display: block;
+}
+
+.upload-control strong {
+  margin-bottom: 3px;
+  font-size: 13px;
+}
+
+.upload-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  color: #327553;
+  background: #edf6ef;
+  font-size: 20px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.file-name {
+  min-height: 18px;
+  margin: 8px 0 0;
+  color: #5d6d63;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.audio-preview {
+  display: block;
+  width: 100%;
+  height: 38px;
+  margin: 12px 0;
+}
+
+.primary-button {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 14px;
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  background: #257353;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s ease, transform .15s ease;
+}
+
+.primary-button:not(:disabled):hover {
+  background: #1d6246;
+  transform: translateY(-1px);
+}
+
+.primary-button:disabled,
+.copy-button:disabled {
+  cursor: not-allowed;
+  opacity: .48;
+}
+
+.status {
+  min-height: 18px;
+  margin: 10px 0 0;
+  color: #527360;
+  font-size: 12px;
+  text-align: center;
+}
+
+.result-card {
+  min-height: 184px;
+}
+
+.result-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.result-heading h2,
+.result-heading .eyebrow {
+  margin-bottom: 4px;
+}
+
+.copy-button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid #e1e8e2;
+  border-radius: 9px;
+  color: #42614e;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.result {
+  min-height: 56px;
+  margin: 0;
+  color: #283b31;
+  font: 400 17px/2 "Noto Nastaliq Urdu", "Noto Naskh Arabic", serif;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  color: #89958e;
+  font-size: 11px;
+  text-align: center;
+}
+
+@keyframes pulse {
+  50% { box-shadow: 0 0 0 5px #d24a3e24; }
+}
+
+@media (max-width: 520px) {
+  .shell {
+    padding-top: 36px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .record-panel {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .record-button {
+    width: 100%;
+  }
+}

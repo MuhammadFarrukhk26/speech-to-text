@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f4">
+    <title>Urdu Voice Transcriber</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="page-header">
+        <div class="brand-mark" aria-hidden="true">ص</div>
+        <p class="eyebrow">VOICE TO TEXT</p>
+        <h1>Urdu Voice Transcriber</h1>
+        <p class="intro">Record a voice message or choose an audio file to turn Urdu speech into text.</p>
+      </header>
+
+      <section class="card" aria-labelledby="audio-heading">
+        <h2 id="audio-heading">Your audio</h2>
+        <div class="record-panel">
+          <button id="record-button" class="record-button" type="button">
+            <span class="record-dot" aria-hidden="true"></span>
+            <span id="record-label">Start recording</span>
+          </button>
+          <p id="record-hint" class="muted">Your browser will ask for microphone access.</p>
+        </div>
+
+        <div class="divider"><span>or upload a recording</span></div>
+
+        <label class="upload-control" for="audio-file">
+          <span class="upload-icon" aria-hidden="true">↑</span>
+          <span><strong>Choose an audio file</strong><small>MP3, WAV, M4A, OGG, FLAC, MP4, MPEG, or WebM · up to 25 MB</small></span>
+        </label>
+        <input id="audio-file" class="visually-hidden" type="file" accept="audio/*,.mp4,.mpeg,.webm">
+        <p id="file-name" class="file-name" aria-live="polite"></p>
+        <audio id="audio-preview" class="audio-preview" controls hidden></audio>
+
+        <button id="transcribe-button" class="primary-button" type="button" disabled>Transcribe in Urdu</button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card result-card" aria-labelledby="result-heading">
+        <div class="result-heading">
+          <div>
+            <p class="eyebrow">TRANSCRIPTION</p>
+            <h2 id="result-heading">Your text</h2>
+          </div>
+          <button id="copy-button" class="copy-button" type="button" disabled>Copy text</button>
+        </div>
+        <p id="result" class="result" lang="ur" dir="auto">Your Urdu transcription will appear here.</p>
+      </section>
+      <footer>Audio is processed by the local server and is not saved after transcription.</footer>
+    </main>
+  </body>
+</html>
